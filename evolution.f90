@@ -60,8 +60,8 @@ subroutine flux(i,dt,FL,FR)
     !FR=0.5*(c*u(i) + c*u(i+1))
 
     !Lax-Friedrichs
-    FL=0.5*(c*u(i-1) + c*u(i)) - (dx/2.*dt*(u(i)-u(i-1)))
-    FR=0.5*(c*u(i) + c*u(i+1)) - (dx/2.*dt*(u(i+1)-u(i)))
+    FL=0.5*(c*uold(i-1) + c*uold(i)) - (dx/2.*dt*(uold(i)-uold(i-1)))
+    FR=0.5*(c*uold(i) + c*uold(i+1)) - (dx/2.*dt*(uold(i+1)-uold(i)))
 
 end subroutine flux
 
